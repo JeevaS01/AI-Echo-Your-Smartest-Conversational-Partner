@@ -344,8 +344,7 @@ def load_models():
     try:
         from transformers import pipeline as hf_pipeline
         hf_pipeline_model = hf_pipeline("sentiment-analysis", model="distilbert-base-uncased-finetuned-sst-2-english")
-    except Exception as e:
-        st.warning(f"Could not load HuggingFace model (will use lightweight fallback): {e}")
+    except Exception:
         def hf_pipeline_fallback(text):
             polarity = TextBlob(text).sentiment.polarity
             if polarity > 0.1:
