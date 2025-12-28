@@ -25,9 +25,6 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 ![Real-time Analysis](image/p2.1.png)
 
 **Prediction 1**
-![Real-time Analysis](image/p2.2.png)
-
-**Prediction 2**
 ![Real-time Analysis](image/p2.3.png)
 
 **Visuals**
