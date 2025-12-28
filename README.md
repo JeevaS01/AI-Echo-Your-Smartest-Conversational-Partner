@@ -180,7 +180,7 @@ pip install transformers torch
 
 ## 🔗 Links
 
-- 🌐 **Live Demo**: [AI Echo on Streamlit Cloud]([https://your-cloud-url](https://ai-echo-your-smartest-conversational-partner-cwpu4nxmhgueaqkk5.streamlit.app/))
+- 🌐 **Live Demo**:https://ai-echo-your-smartest-conversational-partner-cwpu4nxmhgueaqkk5.streamlit.app
 - 📖 **Documentation**: See inline code comments
 - 🐛 **Issues**: Create an issue in the GitHub repo
 
