@@ -14,11 +14,10 @@ from nltk.sentiment.vader import SentimentIntensityAnalyzer
 import warnings
 warnings.filterwarnings('ignore')
 
-# Download necessary NLTK data
+# Download NLTK data
 nltk.download('vader_lexicon', quiet=True)
 nltk.download('stopwords', quiet=True)
 
-# Set page config with white gradient theme
 st.set_page_config(
     page_title="AI Echo - Sentiment Analysis",
     #page_icon="🎯",
@@ -26,7 +25,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Apply custom CSS for dark gradient theme
+# custom CSS 
 st.markdown("""
     <style>
     :root {
@@ -337,7 +336,7 @@ def load_data():
 
 data = load_data()
 
-# Initialize sentiment models
+# sentiment models
 @st.cache_resource
 def load_models():
     vader_analyzer = SentimentIntensityAnalyzer()
@@ -395,7 +394,6 @@ with st.sidebar:
     
     st.markdown("---")
     
-    # Sidebar Info Section
     st.markdown("""
     <div style="background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%); 
                 border: 1px solid rgba(102,126,234,0.3); border-radius: 10px; padding: 15px; margin-top: 30px;">
@@ -407,6 +405,17 @@ with st.sidebar:
         </p>
     </div>
     """.format(len(data)), unsafe_allow_html=True)
+    # Footer
+    st.markdown("")
+    st.markdown("")    
+    st.markdown("---")
+    st.markdown("""
+<div style="text-align: center; color: #a0aec0; font-size: 0.9em; padding: 20px;">
+    <p style="margin: 5px 0;">🎯 AI Echo - Your Smartest Conversational Partner | Built with Streamlit & Python</p>
+    <p style="margin: 5px 0;">Using BERT, VADER, and TextBlob for multi-model sentiment analysis</p>
+    <p style="margin: 5px 0; color: #718096; font-size: 0.8em;">Created By | JEEVA 💖</p>
+</div>
+""", unsafe_allow_html=True)
 
 # Home Page
 if page == "🏠 Home":
@@ -496,7 +505,6 @@ elif page == "🔍 Real-time Analysis":
     st.markdown("### 🎯 Real-time Sentiment Prediction")
     st.markdown("Enter text below to analyze sentiment using multiple AI models")
 
-    # Model Selection and Input Section
     col1, col2 = st.columns([1, 2])
     
     with col1:
@@ -507,7 +515,6 @@ elif page == "🔍 Real-time Analysis":
         )
     
     
-    # Input area
     col1, col2 = st.columns([1.5, 1.5])
     with col1:
         user_input = st.text_area(
@@ -530,7 +537,6 @@ elif page == "🔍 Real-time Analysis":
             </div>
             """, unsafe_allow_html=True)
     
-    # Predict Button
     col1, col2, col3 = st.columns([1, 1, 2])
     
     with col1:
@@ -550,15 +556,13 @@ elif page == "🔍 Real-time Analysis":
                     hf_result = hf_pipeline_model(user_input[:512])[0]
                     hf_label = hf_result['label'].upper()
                     hf_conf = hf_result['score'] * 100
-                    
-                    # Get all sentiment confidences from HuggingFace model
                     full_results = hf_pipeline_model(user_input[:512])
+                    
                     for result in full_results:
                         sentiment = result['label'].upper()
                         score = result['score']
                         sentiment_scores[sentiment] = score * 100
                     
-                    # Ensure all sentiments are present
                     for sent in ['POSITIVE', 'NEGATIVE', 'NEUTRAL']:
                         if sent not in sentiment_scores:
                             sentiment_scores[sent] = 0
@@ -576,7 +580,6 @@ elif page == "🔍 Real-time Analysis":
                         'NEUTRAL': neu
                     }
                     
-                    # Determine primary sentiment
                     if pos >= neg and pos >= neu:
                         hf_label = 'POSITIVE'
                         hf_conf = pos
@@ -593,7 +596,6 @@ elif page == "🔍 Real-time Analysis":
                     blob = TextBlob(user_input)
                     polarity = blob.sentiment.polarity  # -1 to 1
                     
-                    # Convert polarity to sentiment
                     if polarity > 0.1:
                         hf_label = 'POSITIVE'
                         hf_conf = (polarity * 100)
@@ -663,7 +665,7 @@ elif page == "🔍 Real-time Analysis":
                 
                 st.markdown("---")
                 
-                # Chart visualization with attractive design
+                # Chart visualization
                 st.markdown(f"""
                 <p style="color: #a5b4fc; font-size: 0.95em; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 20px;">Confidence Distribution</p>
                 """, unsafe_allow_html=True)
@@ -671,7 +673,7 @@ elif page == "🔍 Real-time Analysis":
                 col1, col2 = st.columns([1, 1])
                 
                 with col1:
-                    # Plotly Bar Chart (medium size, dark theme)
+                    # Plotly Bar Chart
                     sentiments = list(sentiment_scores.keys())
                     scores = list(sentiment_scores.values())
                     colors = [colors_map[s] for s in sentiments]
@@ -683,8 +685,6 @@ elif page == "🔍 Real-time Analysis":
                         marker=dict(color=colors, line=dict(color='#667eea', width=1)),
                         hovertemplate='%{x}: %{y:.1f}%<extra></extra>'
                     ))
-
-                    # annotations for values
                     for x, y in zip(sentiments, scores):
                         fig_bar.add_annotation(x=x, y=y + 2, text=f"{y:.1f}%", showarrow=False, font=dict(color='#e0e7ff', size=12))
 
@@ -915,8 +915,7 @@ elif page == "📉 Advanced Analytics":
         top_versions = version_sentiment.sort_values(by='total', ascending=False).head(12)
         
         # Plotly bar with color scale for positive sentiment % per version
-        df_versions = top_versions.reset_index()
-        # reset_index() puts the version label in the 'version' column — use that as x
+        df_versions = top_versions.reset_index()       
         fig_versions = px.bar(df_versions, x='version', y='pos_pct', color='pos_pct', color_continuous_scale='RdYlGn',
                   range_color=(0,100), labels={'version': 'Version', 'pos_pct': 'Positive Sentiment (%)'})
         fig_versions.update_layout(template='plotly_dark', paper_bgcolor='rgba(0,0,0,0)', plot_bgcolor='#1a202c',
@@ -966,6 +965,7 @@ st.markdown("""
 <div style="text-align: center; color: #a0aec0; font-size: 0.9em; padding: 20px;">
     <p style="margin: 5px 0;">🎯 AI Echo - Sentiment Analysis Platform | Built with Streamlit & Python</p>
     <p style="margin: 5px 0;">Using BERT, VADER, and TextBlob for multi-model sentiment analysis</p>
-    <p style="margin: 5px 0; color: #718096; font-size: 0.8em;">Dark Mode Theme | Enhanced Analytics Dashboard</p>
+    <p style="margin: 5px 0; color: #718096; font-size: 0.8em;">Created By | JEEVA 💖</p>
 </div>
 """, unsafe_allow_html=True)
+
