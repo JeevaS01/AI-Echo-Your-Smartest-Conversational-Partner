@@ -21,10 +21,10 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 
 ![Real-time Analysis](image/p2.png)
 
-**Give Input**
+**Prediction 1**
 ![Real-time Analysis](image/p2.1.png)
 
-**Prediction 1**
+**Prediction 2**
 ![Real-time Analysis](image/p2.3.png)
 
 **Visuals**
@@ -66,29 +66,16 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 
 ### Local Installation
 
-1. **Clone the repository**
-```bash
-git clone <repo-url>
-cd "GUVI DS/NLP/ai echo"
-```
-
-2. **Create virtual environment**
-```bash
-python -m venv .venv
-.venv\Scripts\activate  # Windows
-source .venv/bin/activate  # macOS/Linux
-```
-
-3. **Install dependencies**
+1. **Install dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-4. **Place your data file**
+2. **Place your data file**
 - Ensure `cleaned_review.csv` is in the project root or `data/` folder
 - Required columns: `location`, `platform`, `rating`, `sentiment`, `date`, `review_length`, `processed_reviews`, `version`, `verified_purchase`
 
-5. **Run the app**
+4. **Run the app**
 ```bash
 streamlit run streamlit_app.py
 ```
@@ -156,35 +143,9 @@ Your `cleaned_review.csv` should contain these columns:
 
 ---
 
-## ☁️ Deployment on Streamlit Cloud
-
-### Step 1: Push to GitHub
-```bash
-git add .
-git commit -m "Deploy AI Echo to Streamlit Cloud"
-git push origin main
-```
-
-### Step 2: Connect to Streamlit Cloud
-1. Go to [share.streamlit.io](https://share.streamlit.io)
-2. Sign in with GitHub
-3. Click "New app"
-4. Select your repo, branch, and `streamlit_app.py`
-5. Click "Deploy"
-
 ### Configuration
 The `.streamlit/config.toml` file is pre-configured for Cloud:
 - ✅ Dark theme matching your UI
-- ✅ Optimized server settings
-- ✅ CORS enabled
-- ✅ Headless mode activated
-
-### Notes for Cloud
-- **Data file**: Ensure `cleaned_review.csv` is committed to git
-- **BERT**: Not included by default (heavy dependency). The app will use TextBlob fallback instead
-- **Build time**: First deploy takes ~2-3 minutes
-
----
 
 ## 🎨 Theme & Customization
 
@@ -229,25 +190,6 @@ Edit the CSS in `streamlit_app.py` to customize colors and styling.
 
 ---
 
-## 🛠️ Troubleshooting
-
-### Data not loading?
-- Check if `cleaned_review.csv` is in the project root or `data/` folder
-- Verify CSV has required columns (see Data Requirements)
-- The app will show a fallback single-row dataset if file is missing
-
-### BERT model not loading?
-- This is expected in Cloud environments (heavy dependency)
-- The app automatically falls back to TextBlob
-- To enable BERT locally, install: `pip install transformers torch`
-
-### App running slowly?
-- Clear Streamlit cache: Delete `.streamlit/` in user directory
-- Reduce dataset size or filter to recent reviews
-- Restart the app: Stop and run `streamlit run streamlit_app.py` again
-
----
-
 ## 📚 Dependencies
 
 See `requirements.txt` for all packages:
@@ -267,41 +209,20 @@ pip install transformers torch
 
 ## 🔗 Links
 
-- 🌐 **Live Demo**: [AI Echo on Streamlit Cloud](https://your-cloud-url)
+- 🌐 **Live Demo**: [AI Echo on Streamlit Cloud]([https://your-cloud-url](https://ai-echo-your-smartest-conversational-partner-cwpu4nxmhgueaqkk5.streamlit.app/))
 - 📖 **Documentation**: See inline code comments
 - 🐛 **Issues**: Create an issue in the GitHub repo
 
 ---
 
-## 📝 License
 
-This project is open source. Feel free to use and modify!
-
----
 
 ## 👨‍💻 Author
 
 Built with ❤️ for sentiment analysis enthusiasts.
+Created By Jeeva❤️
 
-**Version**: 1.0.0  
 **Last Updated**: December 28, 2025
-
----
-
-## 🎓 Dataset Attribution
-
-If using public datasets like Amazon/Flipkart reviews, ensure proper attribution per the dataset's license.
-
----
-
-## 🚀 Future Enhancements
-
-- [ ] Add support for multi-language sentiment analysis
-- [ ] Implement aspect-based sentiment analysis
-- [ ] Add export functionality (CSV, PDF reports)
-- [ ] Real-time data ingestion from APIs
-- [ ] User feedback loop for model improvement
-- [ ] Custom model fine-tuning interface
 
 ---
 
