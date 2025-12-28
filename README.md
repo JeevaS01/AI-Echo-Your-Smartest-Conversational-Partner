@@ -20,8 +20,11 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 - Real-time text input analysis
 
 ![Real-time Analysis](image/p2.png)
+**Give Input**
 ![Real-time Analysis](image/p2.1.png)
+**Prediction 1**
 ![Real-time Analysis](image/p2.2.png)
+**Prediction 2**
 ![Real-time Analysis](image/p2.3.png)
 ![Real-time Analysis](image/p2.4.png)
 
@@ -31,7 +34,17 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 - **Location Analysis**: Top locations by positive/negative sentiment
 - **Review Insights**: Verified purchase sentiment comparison
 
-![EDA Dashboard](docs/images/eda-dashboard.png)
+**Tag 1**
+![EDA Dashboard](image/p3.png)
+
+**Tag 2**
+![EDA Dashboard](image/p3.1.png)
+
+**Tag 3**
+![EDA Dashboard](image/p3.2.png)
+
+**Tag 4**
+![EDA Dashboard](image/p3.3.png)
 
 ### 📈 **Advanced Analytics**
 - Platform-wise sentiment distribution
@@ -39,7 +52,11 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 - Keyword analysis from negative reviews
 - Rating distribution visualization
 
-![Advanced Analytics](docs/images/advanced-analytics.png)
+**Tag 1**
+![Advanced Analytics](image/p4.png)
+
+**Tag 2**
+![Advanced Analytics](image/p4.1.png)
 
 ---
 
