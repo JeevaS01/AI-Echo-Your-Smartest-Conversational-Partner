@@ -1,0 +1,13 @@
+streamlit>=1.20.0
+pandas>=1.4.0
+numpy>=1.22.0
+plotly>=5.6.0
+seaborn>=0.12.0
+matplotlib>=3.5.0
+scikit-learn>=1.0.2
+nltk>=3.7
+textblob>=0.17.1
+vaderSentiment>=3.3.2
+
+# Optional (not required for minimal deployment):
+# transformers (and its backend like torch) are heavy and can be omitted if you rely on the TextBlob fallback
