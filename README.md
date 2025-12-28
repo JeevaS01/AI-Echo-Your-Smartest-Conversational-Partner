@@ -161,35 +161,6 @@ Edit the CSS in `streamlit_app.py` to customize colors and styling.
 
 ---
 
-## 📊 Sample Dashboard Walkthrough
-
-### Home Tab
-![Home Tab](docs/images/home-tab.png)
-- View overall sentiment distribution
-- See dataset metrics at a glance
-- Identify positive/negative/neutral review counts
-
-### Real-time Analysis Tab
-![Real-time Tab](docs/images/real-time-tab.png)
-1. Select a sentiment model (VADER recommended)
-2. Type or paste text into the input area
-3. Click "Predict Sentiment"
-4. View confidence breakdown and charts
-
-### EDA Dashboard Tab
-![EDA Tab](docs/images/eda-tab.png)
-- Explore sentiment trends over time
-- Analyze sentiment by star rating
-- Compare locations and platforms
-
-### Advanced Analytics Tab
-![Analytics Tab](docs/images/analytics-tab.png)
-- Platform performance comparison
-- Keyword analysis from negative reviews
-- Version-wise sentiment tracking
-
----
-
 ## 📚 Dependencies
 
 See `requirements.txt` for all packages:
