@@ -13,7 +13,7 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 - Dataset statistics (total reviews, locations, platforms, average rating)
 - Sentiment breakdown with visual cards
 
-![App Screenshot](image/screenshots/assets/home.png)
+![App Screenshot](image/home.png)
 
 ### 🔍 **Real-time Sentiment Analysis**
 - Multi-model sentiment prediction (VADER, TextBlob, BERT)
