@@ -1,8 +1,6 @@
-# 🎯 AI Echo - Sentiment Analysis Dashboard
+# 🎯 AI Echo - Your Smartest Conversational Partner
 
 A powerful, multi-model sentiment analysis platform built with Streamlit, featuring real-time predictions, exploratory data analysis, and advanced analytics using VADER, TextBlob, and BERT models.
-
-![AI Echo Banner](docs/images/banner.png)
 
 ---
 
@@ -21,7 +19,11 @@ A powerful, multi-model sentiment analysis platform built with Streamlit, featur
 - Interactive bar and donut charts
 - Real-time text input analysis
 
-![Real-time Analysis](docs/images/real-time-analysis.png)
+![Real-time Analysis](image/p2.png)
+![Real-time Analysis](image/p2.1.png)
+![Real-time Analysis](image/p2.2.png)
+![Real-time Analysis](image/p2.3.png)
+![Real-time Analysis](image/p2.4.png)
 
 ### 📊 **EDA Dashboard**
 - **Sentiment Overview**: Distribution trends and monthly sentiment trends
