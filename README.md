@@ -3,6 +3,11 @@
 A powerful, multi-model sentiment analysis platform built with Streamlit, featuring real-time predictions, exploratory data analysis, and advanced analytics using VADER, TextBlob, and BERT models.
 
 ---
+## 🔗 Links
+
+- 🌐 **Live Demo**:https://ai-echo-your-smartest-conversational-partner-cwpu4nxmhgueaqkk5.streamlit.app
+- 📖 **Documentation**: See inline code comments
+---
 
 ## ✨ Features
 
@@ -177,16 +182,6 @@ pip install transformers torch
 ```
 
 ---
-
-## 🔗 Links
-
-- 🌐 **Live Demo**:https://ai-echo-your-smartest-conversational-partner-cwpu4nxmhgueaqkk5.streamlit.app
-- 📖 **Documentation**: See inline code comments
-- 🐛 **Issues**: Create an issue in the GitHub repo
-
----
-
-
 
 ## 👨‍💻 Author
 
